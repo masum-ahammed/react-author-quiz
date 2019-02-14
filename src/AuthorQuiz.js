@@ -6,7 +6,7 @@ class AuthorQuiz extends Component {
   render() {
     return (
       <div className="App">
-       Author Quiz
+       <h1>Author Quiz</h1> 
       </div>
     );
   }

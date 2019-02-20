@@ -34,6 +34,5 @@ test('renders without crashing', () => {
 
 test('renders a h1', () => {
   const wrapper = shallow(<AuthorQuiz {...state} onAnswerSelected= { () => {}}/>);
-  
   expect(wrapper.find("h1").length).toBe(1);
 });

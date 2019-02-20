@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 
 
 function Hero() {
+  debugger;
   return (<div className="row">
     <div className="jambotron col-10 offset-1">
       <h1>Author Quiz</h1>
@@ -28,7 +29,7 @@ Turn.propTypes = {
   }),
   books: PropTypes.arrayOf(PropTypes.string).isRequired,
   onAnswerSelected: PropTypes.func.isRequired,
-  highlight: PropTypes.func.isRequired
+  highlight: PropTypes.string.isRequired
 }
 function Turn({ author, books,highlight, onAnswerSelected }) {
 

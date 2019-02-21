@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 
 function Hero() {
-  debugger;
+ 
   return (<div className="row">
     <div className="jambotron col-10 offset-1">
       <h1>Author Quiz</h1>
@@ -20,17 +20,7 @@ function Book({ title, onClick }) {
     <h4>{title}</h4>
   </div>);
 }
-Turn.propTypes = {
-  author : PropTypes.shape({
-    name : PropTypes.string.isRequired,
-    imageUrl: PropTypes.string.isRequired,
-    imageSource: PropTypes.string.isRequired,
-    books : PropTypes.arrayOf(PropTypes.string).isRequired
-  }),
-  books: PropTypes.arrayOf(PropTypes.string).isRequired,
-  onAnswerSelected: PropTypes.func.isRequired,
-  highlight: PropTypes.string.isRequired
-}
+
 function Turn({ author, books,highlight, onAnswerSelected }) {
 
   function hightlishtToBGColor(highlight){
@@ -41,7 +31,7 @@ function Turn({ author, books,highlight, onAnswerSelected }) {
      };
      return mapping[highlight];
   }
-  return (<div className="row turn" style={{ background: hightlishtToBGColor(highlight) }}>
+  return (<div className="row turn" style={{ backgroundColor: hightlishtToBGColor(highlight) }}>
     <div className="col-4 offset-1">
       <img src={author.imageUrl} className="authorimage" alt="Author"></img>
     </div>
@@ -49,6 +39,17 @@ function Turn({ author, books,highlight, onAnswerSelected }) {
       {books.map((title) => <Book title={title} key={title} onClick={ onAnswerSelected } />)}
     </div>
   </div>);
+}
+Turn.propTypes = {
+  author : PropTypes.shape({
+    name : PropTypes.string.isRequired,
+    imageUrl: PropTypes.string.isRequired,
+    imageSource: PropTypes.string.isRequired,
+    books : PropTypes.arrayOf(PropTypes.string).isRequired
+  }),
+  books: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onAnswerSelected: PropTypes.func.isRequired,
+  highlight: PropTypes.string.isRequired
 }
 function Continue() {
   return (<div></div>);
